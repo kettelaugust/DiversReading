@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divers Voyages et Missions — Alexandre de Rhodes</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Leaflet CSS и JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+    <div class="site-container">
+        <!-- Шапка с меню справа -->
+        <header class="top-header">
+            <nav class="nav-links">
+                <button class="nav-btn active" onclick="switchTab('main', this)">Main</button>
+                <button class="nav-btn" onclick="switchTab('gallery', this)">Gallery</button>
+                <button class="nav-btn" onclick="switchTab('texts', this)">Texts</button>
+                <button class="nav-btn" onclick="switchTab('collation', this)">Collation</button>
+                <button class="nav-btn" onclick="switchTab('map', this)">Map</button>
+                <!-- Исправлено с map-tab на map -->
+                <button class="nav-btn btn-pill" onclick="switchTab('about', this)">About Project</button>
+            </nav>
+        </header>
+
+        <main class="content-area">
+
+            <!-- Раздел MAIN (Как в Figma) -->
+            <section id="sec-main" class="tab-content active">
+                <div class="hero-section">
+                    <div class="hero-text">
+                        <div class="kicker">DIVERS READINGS OF</div>
+                        <h1 class="hero-title">DIVERS VOYAGES ET MISSION</h1>
+                        <p class="hero-subtitle">Digital Scholarly Edition built on Alexander de Rhodes' writings</p>
+
+                        <button class="cta-btn"
+                            onclick="switchTab('about', document.querySelector('.nav-btn.btn-pill'))">About
+                            Project</button>
+                        <!-- Тёмная карточка с текстом -->
+                        <div class="dark-info-card">
+                            <p><strong>Alexander de Rhodes was not merely a missionary, but a passionate enthusiast, an
+                                    educator, and a courageous traveler.</strong></p>
+                            <p>This French monk was born on March 15, 1591, in Avignon. He founded the Paris Foreign
+                                Missions Society, developed the first Vietnamese script based on the Latin alphabet
+                                <em>(chữ
+                                    Quốc ngữ)</em> and played a significant role in spreading Christianity throughout
+                                Asia.
+                            </p>
+                            <p>One of his most remarkable and widely read works is <em>Divers voyages et missions</em>,
+                                in which
+                                Father Alexander recounts his 35-year journey across the East. The book is a travelogue
+                                rich with valuable ethnographic and historical observations. This digital edition
+                                invites readers on a meta-journey into the world of Jesuit discoveries.</p>
+                        </div>
+                    </div>
+
+                    <!-- Контейнер портрета с внешней подписью -->
+                    <div class="hero-portrait-wrapper">
+                        <div class="portrait-container">
+                            <div class="portrait-oval">
+                                <img src="data/images/rhodes.jpg" alt="Alexandre de Rhodes" class="hero-portrait">
+                            </div>
+                            <div class="portrait-caption-box">
+                                <span class="caption-title">Portrait of Alexandre de Rhodes (1591–1660)</span>
+                                <span class="caption-sub">Unknown artist, 17th century</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Раздел GALLERY -->
+            <section id="sec-gallery" class="tab-content">
+                <div class="gallery-header-text">
+                    <h2>Gallery</h2>
+                    <p>A visual collection of art objects, maps, documents, and philatelic records related to
+                        Alexandre de Rhodes and his missions.</p>
+                </div>
+
+                <!-- Сетка экспонатов -->
+                <div class="artefacts-grid">
+
+                    <!-- Экспонат 1 -->
+                    <div class="artefact-card" onclick="openLightbox(0)">
+                        <div class="artefact-img-box">
+                            <img src="data/images/rhodes.jpg" alt="Portrait of Alexandre de Rhodes"
+                                onerror="this.src='https://placehold.co/600x800/e2e8f0/475569?text=Portrait'">
+                        </div>
+                        <div class="artefact-label">Portrait of Alexandre de Rhodes</div>
+                    </div>
+
+                    <!-- Экспонат 2 -->
+                    <div class="artefact-card" onclick="openLightbox(1)">
+                        <div class="artefact-img-box">
+                            <img src="data/images/The Introduction.jfif"
+                                alt="The Introduction of Roman Writing Into Vietnam"
+                                onerror="this.src='https://placehold.co/600x800/e2e8f0/475569?text=Roman+Script'">
+                        </div>
+                        <div class="artefact-label">The Introduction of Roman Writing Into Vietnam</div>
+                    </div>
+
+                    <!-- Экспонат 3 -->
+                    <div class="artefact-card" onclick="openLightbox(2)">
+                        <div class="artefact-img-box">
+                            <img src="data/images/rhodes_post_indochina.jpg" alt="Postage stamps of French Indochina"
+                                onerror="this.src='https://placehold.co/600x800/e2e8f0/475569?text=French+Indochina+Stamps'">
+                        </div>
+                        <div class="artefact-label">Postage Stamps of French Indochina</div>
+                    </div>
+
+                    <!-- Экспонат 4 -->
+                    <div class="artefact-card" onclick="openLightbox(3)">
+                        <div class="artefact-img-box">
+                            <img src="data/images/rhodes_post_viet.jpg" alt="Postage stamps of Vietnam"
+                                onerror="this.src='https://placehold.co/600x800/e2e8f0/475569?text=Vietnam+Stamps'">
+                        </div>
+                        <div class="artefact-label">Postage Stamps of Vietnam</div>
+                    </div>
+
+                    <!-- Экспонат 5 -->
+                    <div class="artefact-card" onclick="openLightbox(4)">
+                        <div class="artefact-img-box">
+                            <img src="data/images/oldmap_vietnam.jpg" alt="Old map of Vietnam"
+                                onerror="this.src='https://placehold.co/600x800/e2e8f0/475569?text=Old+Map'">
+                        </div>
+                        <div class="artefact-label">Old Map of Vietnam</div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- GALLERY LIGHTBOX MODAL -->
+            <div id="gallery-modal" class="modal-overlay" onclick="closeLightbox(event)">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <!-- Кнопка крестика с прямой передачей события -->
+                    <button type="button" class="modal-close-btn" onclick="closeLightbox(event)">&times;</button>
+
+                    <div class="modal-body">
+                        <div class="modal-image-container">
+                            <img id="modal-img" src="" alt="Artefact Preview">
+                        </div>
+                        <div class="modal-info">
+                            <h3 id="modal-title"></h3>
+                            <div class="meta-row">
+                                <span class="meta-label">Artist / Creator</span>
+                                <span id="modal-author" class="meta-value"></span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Year / Date</span>
+                                <span id="modal-year" class="meta-value"></span>
+                            </div>
+                            <div class="meta-row">
+                                <span class="meta-label">Source / Location</span>
+                                <span id="modal-source" class="meta-value"></span>
+                            </div>
+                            <hr class="sidebar-divider">
+                            <h4>Description</h4>
+                            <p id="modal-desc"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION: TEXTS & PRIMARY SOURCES -->
+            <section id="sec-texts" class="tab-content">
+                <div class="texts-header">
+                    <h2>Primary Sources & Historical Facsimiles</h2>
+                    <p>Select a historical volume below to explore its complete facsimile and metadata.</p>
+                </div>
+
+                <!-- Режим 1: Сетка карточек (Галерея книг) -->
+                <div id="pdf-gallery-grid" class="books-grid">
+
+                    <!-- Книга 1 -->
+                    <div class="book-card" onclick="openPdfViewer('1651_cathechismus')">
+                        <div class="book-cover">
+                            <img src="data/images/covers/1651_cover.jpg" alt="Cathechismus 1651"
+                                onerror="this.src='https://via.placeholder.com/300x420/0f172a/ffffff?text=Cathechismus+(1651)'">
+                        </div>
+                        <div class="book-info">
+                            <span class="book-year">1651</span>
+                            <h3>Cathechismus</h3>
+                            <p>Sacra Congregatio de Propaganda Fide</p>
+                        </div>
+                    </div>
+
+                    <!-- Книга 2 -->
+                    <div class="book-card" onclick="openPdfViewer('1653_voyages')">
+                        <div class="book-cover">
+                            <img src="data/images/covers/1653_cover.jpg" alt="Divers voyages 1653"
+                                onerror="this.src='https://via.placeholder.com/300x420/1e293b/ffffff?text=Divers+Voyages+(1653)'">
+                        </div>
+                        <div class="book-info">
+                            <span class="book-year">1653</span>
+                            <h3>Divers voyages et missions</h3>
+                            <p>S. Cramoisy et G. Cramoisy, Paris</p>
+                        </div>
+                    </div>
+
+                    <!-- Книга 3 -->
+                    <div class="book-card" onclick="openPdfViewer('1655_relation')">
+                        <div class="book-cover">
+                            <img src="data/images/covers/1655_cover.jpg" alt="Relation 1655"
+                                onerror="this.src='https://via.placeholder.com/300x420/334155/ffffff?text=Relation...+(1655)'">
+                        </div>
+                        <div class="book-info">
+                            <span class="book-year">1655</span>
+                            <h3>Relation de ce qui s'est passé...</h3>
+                            <p>Florentin Lambert, Paris</p>
+                        </div>
+                    </div>
+
+                    <!-- Книга 4 -->
+                    <div class="book-card" onclick="openPdfViewer('1666_voyages')">
+                        <div class="book-cover">
+                            <img src="data/images/covers/1666_cover.jpg" alt="Divers voiages 1666"
+                                onerror="this.src='https://via.placeholder.com/300x420/1e293b/ffffff?text=Divers+Voiages+(1666)'">
+                        </div>
+                        <div class="book-info">
+                            <span class="book-year">1666</span>
+                            <h3>Divers voiages du P. Alexandre de Rhodes</h3>
+                            <p>S. Mabre-Cramoisy, Paris</p>
+                        </div>
+                    </div>
+
+                    <!-- Книга 5 -->
+                    <div class="book-card" onclick="openPdfViewer('1682_voyages')">
+                        <div class="book-cover">
+                            <img src="data/images/covers/1682_cover.jpg" alt="Divers voyages 1682"
+                                onerror="this.src='https://via.placeholder.com/300x420/0f172a/ffffff?text=Divers+Voyages+(1682)'">
+                        </div>
+                        <div class="book-info">
+                            <span class="book-year">1682</span>
+                            <h3>Divers voyages de la Chine et autres...</h3>
+                            <p>Christophe Iournel, Paris</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Режим 2: Вьюер с метаданными (изначально скрыт) -->
+                <div id="pdf-viewer-mode" class="pdf-viewer-wrapper" style="display: none;">
+
+                    <div class="viewer-top-bar">
+                        <button class="back-to-grid-btn" onclick="closePdfViewer()">← Back to Volume Collection</button>
+                    </div>
+
+                    <div class="pdf-workspace">
+                        <div class="pdf-container">
+                            <iframe id="pdf-frame" src="" width="100%" height="100%" frameborder="0"></iframe>
+                        </div>
+
+                        <div class="pdf-sidebar">
+                            <div class="sidebar-card">
+                                <h3 id="pdf-meta-title"></h3>
+
+                                <div class="meta-row">
+                                    <span class="meta-label">Author / Creator</span>
+                                    <span id="pdf-meta-author" class="meta-value"></span>
+                                </div>
+
+                                <div class="meta-row">
+                                    <span class="meta-label">Publication Year</span>
+                                    <span id="pdf-meta-year" class="meta-value"></span>
+                                </div>
+
+                                <div class="meta-row">
+                                    <span class="meta-label">Publisher</span>
+                                    <span id="pdf-meta-publisher" class="meta-value"></span>
+                                </div>
+
+                                <div class="meta-row">
+                                    <span class="meta-label">Source Repository</span>
+                                    <span id="pdf-meta-source" class="meta-value"></span>
+                                </div>
+
+                                <hr class="sidebar-divider">
+
+                                <h4>Annotation</h4>
+                                <p id="pdf-meta-desc"></p>
+
+                                <div class="sidebar-actions">
+                                    <a id="pdf-download-link" href="" download class="download-pdf-btn">
+                                        ↓ Download PDF
+                                    </a>
+                                    <a id="pdf-source-link" href="" target="_blank" rel="noopener"
+                                        class="source-link-btn">
+                                        ↗ View Web source
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Раздел COLLATION -->
+            <section id="sec-collation" class="tab-content">
+                <h2>Collation</h2>
+                <div class="collation-wrapper">
+                    <div class="column">
+                        <div class="column-header">
+                            <em>Divers voyages et missions</em> (1653)
+                        </div>
+                        <div id="col-w1653" class="column-content"></div>
+                    </div>
+                    <div class="column">
+                        <div class="column-header">
+                            <em>Divers voyages de la Chine</em> (1682)
+                        </div>
+                        <div id="col-w1682" class="column-content"></div>
+                    </div>
+                </div>
+
+                <div id="apparatus-panel" class="apparatus-panel">
+                    <div class="app-title">Variants:</div>
+                    <div id="app-details">Tap on the lighten text to see the variants.</div>
+                </div>
+            </section>
+
+            <!-- Раздел MAP -->
+            <section id="sec-map" class="tab-content">
+                <h2>Interactive map</h2>
+                <div class="map-layout">
+                    <div id="map"></div>
+                    <div class="places-sidebar">
+                        <h3>Geographical indicators</h3>
+                        <ul id="places-list"></ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Новый раздел ABOUT PROJECT -->
+            <section id="sec-about" class="tab-content">
+                <div class="about-container">
+                    <!-- Левое мини-меню -->
+                    <aside class="about-sidebar">
+                        <h3 class="sidebar-title">Documentation</h3>
+                        <nav class="about-nav">
+                            <button class="about-nav-btn active" data-tab="tab-overview">Overview</button>
+                            <button class="about-nav-btn" data-tab="tab-goals">Goals & Concept</button>
+                            <button class="about-nav-btn" data-tab="tab-methodology">Methodology & Modelling</button>
+                            <button class="about-nav-btn" data-tab="tab-bibliography">Bibliography</button>
+                        </nav>
+                    </aside>
+
+                    <!-- Правая часть с контентом -->
+                    <main class="about-content">
+
+                        <!-- TAB 1: OVERVIEW -->
+                        <div id="tab-overview" class="about-tab-content active">
+                            <h2>Project Overview</h2>
+                            <p>
+                                <strong>"Divers Readings of Divers Voyages et Missions"</strong> was created as part of
+                                the course <em>"Digital Scholarly Editing: Theory, Methods and Practice"</em> (Prof.
+                                Paola Maria Italia, University of Bologna). The author of the project is Ekaterina
+                                Krasnova, a student of the Digital Humanities and Digital Knowledge (DHDK) Master's
+                                programme.
+                            </p>
+                            <p>
+                                "Divers Readings" is a pilot project representing a demo version of a broader platform
+                                dedicated to reflecting different aspects of 17th-century Jesuit missionary discourse.
+                                The French Jesuit <strong>Alexandre de Rhodes</strong>, who became famous for his
+                                missions to
+                                Vietnam, Indochina, and other Asian territories, was chosen as a representative figure.
+                            </p>
+                            <p>
+                                As a case study for critical edition, the work <em>"Divers Voyages"</em> (first
+                                published in 1653 in Paris) was selected. Father Alexandre's work exists across several
+                                distinct editions, providing a rich basis for observing linguistic,
+                                historical-typographical, and orthographic changes over time. Consequently, an
+                                <strong>Apparatus of Variants</strong> was chosen as the primary methodological
+                                approach.
+                            </p>
+                            <p>
+                                The platform was conceived not merely as a text analysis workspace, but as an
+                                <strong>interactive ecosystem</strong> combining collation tools with a digital
+                                catalogue, visual
+                                gallery, and geo-spatial mapping. It caters to both academic specialists and a broader
+                                public interested in digital history.
+                            </p>
+                        </div>
+
+                        <!-- TAB 2: GOALS & CONCEPT -->
+                        <div id="tab-goals" class="about-tab-content">
+                            <h2>Goals & Core Concept</h2>
+                            <div class="goals-grid">
+                                <div class="goal-card">
+                                    <h3>Educational Goal</h3>
+                                    <p>to provide a broad audience with various educational tools through which they can
+                                        learn something new about Alexandre de Rhodes and his missions</p>
+                                </div>
+                                <div class="goal-card">
+                                    <h3>Scholarly Goal</h3>
+                                    <p>to provide a ready-to-use tool for specialists in philology and linguistics; to
+                                        demonstrate typographic and linguistic changes in the text</p>
+                                </div>
+                                <div class="goal-card">
+                                    <h3>Preservation</h3>
+                                    <p>to create an open-source platform that will allow relevant texts and other data
+                                        to be collected and preserved</p>
+                                </div>
+                            </div>
+
+                            <h3>Future Perspectives</h3>
+                            <p>
+                                A long-term perspective is to expand the project beyond a single figure and build a
+                                comprehensive digital catalogue of 17th-century Jesuit missions in general. While
+                                originally conceived as a broader repository of French Jesuit literature, the current
+                                pilot narrows its scope to a comparative study of two key editions of <em>Divers
+                                    Voyages</em>: the 1653 <em>editio princeps</em> published during Rhodes' lifetime
+                                and the posthumous 1682 edition.
+                            </p>
+                        </div>
+
+                        <!-- TAB 3: METHODOLOGY -->
+                        <div id="tab-methodology" class="about-tab-content">
+                            <h2>Methodology & Modelling</h2>
+
+                            <h3>FRBR Conceptual Model</h3>
+                            <p>The structural and textual history of Alexandre de Rhodes' works is mapped across four
+                                FRBR core entities:</p>
+                            <ul class="methodology-list">
+                                <li><strong>Work:</strong> The abstract intellectual creation - specifically, Rhodes'
+                                    accounts of his evangelical missions in Asia and Indochina.</li>
+                                <li><strong>Expression:</strong> The specific linguistic and structural realizations. We
+                                    examine two primary expressions: the original 1653 Paris edition and the revised
+                                    posthumous 1682 edition (e.g. Chapter XXI in 1653 becoming Chapter XX in 1682).</li>
+                                <li><strong>Manifestation:</strong> The physical printed publications produced by
+                                    17th-century printing houses (Cramoisy 1653, Journel 1682), registered in our
+                                    <em>Texts</em> catalogue with embedded PDF surrogates.
+                                </li>
+                                <li><strong>Item:</strong> The specific digitized copies provided by memory institutions
+                                    (Bibliothèque nationale de France / Gallica and Google Books) used for transcription
+                                    and collation.</li>
+                            </ul>
+
+                            <h3>TEI P5 Encoding & Key Elements</h3>
+                            <div class="table-responsive">
+                                <table class="tei-table">
+                                    <thead>
+                                        <tr>
+                                            <th>TEI Element / Attribute</th>
+                                            <th>Function in Data Model</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>&lt;witness xml:id="..."&gt;</code></td>
+                                            <td>Describes historical printed sources (e.g. <code>W1653</code>,
+                                                <code>W1682</code>) referenced in the apparatus.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>&lt;profileDesc&gt;</code></td>
+                                            <td>Contains <code>&lt;listPerson&gt;</code>,
+                                                <code>&lt;listPlace&gt;</code>, and <code>&lt;listOrg&gt;</code> for
+                                                prosopographical and geographical entities.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>&lt;roleName&gt;</code></td>
+                                            <td>Distinguishes real historical actors from conceptual figures (e.g.
+                                                saints, sacred entities).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>&lt;app&gt;</code>, <code>&lt;lem&gt;</code>,
+                                                <code>&lt;rdg&gt;</code>
+                                            </td>
+                                            <td>Critical apparatus module mapping textual variations across witnesses.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>@type</code> attribute</td>
+                                            <td>Classifies variations into <code>punctuation</code>,
+                                                <code>orthographic</code>, or <code>substantive</code>.
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>&lt;pb edRef="..." n="..."/&gt;</code></td>
+                                            <td>Specifies exact page boundaries for each physical edition.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <blockquote class="methodology-note">
+                                <strong>Methodological note on Lineation (<code>&lt;lb/&gt;</code>):</strong><br>
+                                According to W. W. Greg's classic distinction, lineation and word hyphenation belong to
+                                accidentals - formal rather than substantive aspects of the text. Since the element
+                                marks a typographic line break in a specific source, it is therefore "tied" to one
+                                physical page of one edition. Line breaks differ between the two editions, and so
+                                placing <code>&lt;lb/&gt;</code> in the shared collation text would require arbitrarily
+                                choosing whose line break to consider the "base" one. In my view, this contradicted the
+                                logic of the Apparatus of
+                                Variants, where both witnesses are equal, and the text in Collation mode looked more
+                                harmonious without the initial line-by-line division.
+
+                            </blockquote>
+
+                            <h3>Workflow & Interface Design</h3>
+                            <p>
+                                Initial testing was conducted using <strong>EVT (Edition Visualization
+                                    Technology)</strong> to verify apparatus accuracy. To fulfill the visual and
+                                user-experience goals of the platform, custom UI prototypes were built in Figma and
+                                implemented as a web application forming a catalogue:
+                            </p>
+                            <ul>
+                                <li><strong>Main:</strong> the main page of the website</li>
+                                <li><strong>Gallery:</strong> a gallery with visual objects</li>
+                                <li><strong>Texts:</strong> a collection of texts</li>
+                                <li><strong>Collation:</strong> the DSE itself, designed as a collation -
+                                    <i>side-by-side
+                                        parallel reading</i> with <i>variant highlightin</i>.</li>
+                            </ul>
+                        </div>
+
+                        <!-- TAB 4: BIBLIOGRAPHY -->
+                        <div id="tab-bibliography" class="about-tab-content">
+                            <h2>Bibliography</h2>
+
+                            <h3>Primary Sources & Catalogued Texts</h3>
+                            <ol class="biblio-list">
+                                <li>
+                                    Rhodes, Alexandre de. <em>Divers voyages et missions du P. Alexandre de Rhodes en la
+                                        Chine, & autres Royaumes de l'Orient...</em> Paris: Sébastien Cramoisy, 1653.
+                                    [<a href="https://gallica.bnf.fr/ark:/12148/btv1b8607026z" target="_blank"
+                                        rel="noopener">Gallica BnF</a>]
+                                </li>
+                                <li>
+                                    Rhodes, Alexandre de. <em>Divers voyages de la Chine et autres royaumes de
+                                        l'orient...</em> Paris: Christophe Journel, 1682.
+                                    [<a href="https://books.google.ru/books?id=74U28QLId2UC" target="_blank"
+                                        rel="noopener">Google Books</a>]
+                                </li>
+                                <li>
+                                    Rhodes, Alexandre de. <em>Cathechismus pro iis, qui volunt suscipere
+                                        Baptismum...</em> Romae: Typis Sacrae Congregationis de Propaganda Fide, 1651.
+                                </li>
+                                <li>
+                                    Rhodes, Alexandre de. <em>Divers voiages du P. Alexandre de Rhodes en la Chine et
+                                        autres...</em> Paris, 1666.
+                                </li>
+                                <li>
+                                    Rhodes, Alexandre de. <em>Relation de ce qui s'est passé en l'année 1649...</em>
+                                    Paris, 1655.
+                                </li>
+                            </ol>
+
+                            <h3>Secondary Literature</h3>
+                            <ol class="biblio-list">
+                                <li>Burghart, Marjorie. <em>Creating a Digital Scholarly Edition with the Text Encoding
+                                        Initiative</em>. DEMM, 2017.</li>
+                                <li>Carlyle, Allyson. "Understanding FRBR As a Conceptual Model." <em>Library Resources
+                                        & Technical Services</em>, vol. 50, no. 4, 2006, pp. 264–273.</li>
+                                <li>Greg, W. W. "The Rationale of Copy-Text." <em>Studies in Bibliography</em>, vol. 3,
+                                    1950–1951, pp. 19–36.</li>
+                                <li>Madison, Olivia M. A. "The IFLA Functional Requirements for Bibliographic Records."
+                                    <em>Library Resources & Technical Services</em>, vol. 44, no. 3, 2011, pp. 153–159.
+                                </li>
+                                <li>Shillingsburg, Peter. <em>Development Principles for Virtual Archives and
+                                        Editions</em>. Center for Textual Studies and Digital Humanities Publications,
+                                    2013.</li>
+                                <li>TEI Consortium. <em>TEI P5: Guidelines for Electronic Text Encoding and
+                                        Interchange</em>. Chapter 12: "Critical Apparatus", 2023. [<a
+                                        href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html"
+                                        target="_blank" rel="noopener">TEI Guidelines</a>]</li>
+                            </ol>
+                        </div>
+
+                    </main>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

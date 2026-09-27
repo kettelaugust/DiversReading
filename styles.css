@@ -1,0 +1,1220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-color: #ffffff;
+    --text-primary: #18181b;
+    --text-muted: #71717a;
+    --card-dark-bg: #5a626a;
+    /* Чуть более глубокий углистый цвет */
+    --card-dark-text: #f4f4f5;
+    --border-color: #e4e4e7;
+    --btn-dark: #3f3f46;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+
+    /* Фоновая старинная карта/текстура */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)),
+        /* Мягкое белое затемнение для читаемости */
+        url('data/images/map.jpg');
+    /* Путь к вашей фоновой картинке */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Фиксированный фон при скролле */
+}
+
+/* Расширенный контейнер для устранения пустоты по бокам */
+.site-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 25px 60px 80px 60px;
+}
+
+/* Навигация — укрупненные шрифты и отступы */
+.top-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0 40px 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    /* Крупнее шрифт меню */
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    color: #000;
+    background-color: #f4f4f5;
+}
+
+.nav-btn.active {
+    font-weight: 700;
+}
+
+/* Кнопка "About Project" в меню */
+.nav-btn.btn-pill {
+    background-color: #52525b;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 10px 22px;
+}
+
+.nav-btn.btn-pill:hover {
+    background-color: #27272a;
+}
+
+/* Главный блок Hero — масштабнее */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    /* Увеличили колонку под портрет */
+    gap: 60px;
+    align-items: start;
+}
+
+.kicker {
+    font-size: 0.95rem;
+    /* Крупнее плашка над заголовком */
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #3f3f46;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    font-size: 3.1rem;
+    /* Крупный выразительный заголовок */
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.8px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    /* Крупнее подзаголовок */
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+/* Главная кнопка */
+.cta-btn {
+    background-color: var(--btn-dark);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 35px;
+    transition: background 0.2s ease;
+}
+
+.cta-btn:hover {
+    background-color: #18181b;
+}
+
+/* Серый блок с информацией */
+.dark-info-card {
+    background-color: var(--card-dark-bg);
+    color: var(--card-dark-text);
+    padding: 22px 35px;
+    /* Уменьшили только верх и низ (было 35px 40px) */
+    border-radius: 16px;
+    font-size: 0.98rem;
+    /* Чуть уплотнили текст */
+    line-height: 1.5;
+    /* Межстрочный интервал стал более компактным (было 1.7) */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark-info-card p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    /* Уменьшили отступ между абзацами (было 18px) */
+}
+
+.dark-info-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Увеличенный овальный портрет */
+.hero-portrait-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.hero-portrait {
+    width: 340px;
+    /* Портрет стал заметно крупнее */
+    height: 440px;
+    object-fit: cover;
+    border-radius: 170px;
+    /* Сохраняем овальную форму */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Разделы */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Раздел Collation */
+.collation-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+    height: 60vh;
+}
+
+.column {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/*.column-header {
+    background: #f4f4f5;
+    padding: 14px 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+}*/
+
+.column-header {
+    background: #f8fafc;
+    padding: 14px 16px;
+    /* Увеличили внутренние отступы сверху и снизу */
+    height: auto;
+    /* Разрешаем блоку подстраиваться под высоту текста */
+    line-height: 1.4;
+    /* Задаем комфортную высоту строки */
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.column-header em {
+    font-style: italic;
+    font-family: 'Georgia', serif;
+}
+
+.column-content {
+    padding: 30px;
+    overflow-y: auto;
+    font-family: 'Georgia', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.variant-highlight {
+    background-color: #fef3c7;
+    border-bottom: 2px solid #f59e0b;
+    padding: 2px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.variant-highlight.active {
+    background-color: #fde047;
+    border-bottom-color: #d97706;
+    font-weight: 600;
+}
+
+.apparatus-panel {
+    margin-top: 25px;
+    background: white;
+    padding: 22px 30px;
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--text-primary);
+    border-radius: 10px;
+}
+
+/* Раздел Карта */
+.map-layout {
+    display: flex;
+    gap: 25px;
+    height: 70vh;
+    margin-top: 20px;
+}
+
+#map {
+    flex: 2;
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    z-index: 1;
+}
+
+.places-sidebar {
+    flex: 1;
+    overflow-y: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+/* Перенос глав на новую строку и отступы */
+.column-content .chapter-title,
+.column-content p.chapter {
+    display: block;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    text-align: center;
+    /* Центрируем название главы */
+}
+
+/* Если 'Chapitre' обёрнут в подсветку варианта, заставляем его работать как блочный элемент */
+.variant-highlight {
+    display: inline-block;
+    /* Позволяет корректно держать переносы */
+}
+
+/* Главный контейнер портрета */
+.hero-portrait-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.portrait-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 340px;
+    cursor: pointer;
+}
+
+/* Овальная рамка портрета с анимацией */
+.portrait-oval {
+    width: 340px;
+    height: 440px;
+    border-radius: 170px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    background-color: #f4f4f5;
+}
+
+.hero-portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Анимация при наведении на всю карточку */
+.portrait-container:hover .portrait-oval {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+.portrait-container:hover .hero-portrait {
+    transform: scale(1.05);
+}
+
+/* Выплывающая стильная подпись под овалом */
+.portrait-caption-box {
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+    /* Начальное состояние для анимации появление */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+}
+
+/* Появление подписи при ховере */
+.portrait-container:hover .portrait-caption-box {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.caption-title {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.caption-sub {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   TEXTS SECTION: LIBRARY & VIEWER
+   ========================================================================== */
+
+/* Галерея обложек */
+.gallery-header {
+    margin-bottom: 24px;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.book-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f1f5f9;
+    margin-bottom: 12px;
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.book-card:hover .book-cover {
+    transform: scale(1.04);
+}
+
+.book-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+}
+
+.book-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0 0 6px 0;
+    color: var(--text-primary);
+}
+
+.book-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Вьюер книги */
+.viewer-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 12px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-back {
+    background: #f1f5f9;
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.btn-back:hover {
+    background: #e2e8f0;
+}
+
+.viewer-book-title {
+    font-weight: 700;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.viewer-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-nav {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.page-counter {
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.view-mode-toggle {
+    display: flex;
+    background: #f1f5f9;
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.btn-toggle {
+    border: none;
+    background: transparent;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-toggle.active {
+    background: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Двухпанельная рабочая область */
+.viewer-workspace {
+    display: grid;
+    gap: 16px;
+    height: 70vh;
+}
+
+.viewer-workspace.mode-split {
+    grid-template-columns: 1fr 1fr;
+}
+
+.viewer-workspace.mode-facsimile {
+    grid-template-columns: 1fr;
+}
+
+.viewer-workspace.mode-facsimile .panel-transcription {
+    display: none;
+}
+
+.viewer-panel {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    background: #f8fafc;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.image-zoom-container {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #27272a;
+    padding: 16px;
+}
+
+.facsimile-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.transcription-text {
+    flex: 1;
+    padding: 24px 32px;
+    overflow-y: auto;
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   GALLERY & MUSEUM LIGHTBOX STYLES
+   ========================================================================== */
+
+.gallery-header-text {
+    margin-bottom: 30px;
+}
+
+.gallery-header-text h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.gallery-header-text p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Сетка карточек */
+.artefacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.artefact-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.artefact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+.artefact-img-box {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+    margin-bottom: 14px;
+}
+
+.artefact-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.artefact-card:hover .artefact-img-box img {
+    transform: scale(1.05);
+}
+
+.artefact-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.35;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   GALLERY & MUSEUM LIGHTBOX STYLES (ИСПРАВЛЕННЫЙ И СОГЛАСОВАННЫЙ БЛОК)
+   ========================================================================== */
+
+/* Модальное окно (Overlay) */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Контейнер модального окна */
+.modal-content {
+    background: #ffffff;
+    border-radius: 18px;
+    max-width: 950px;
+    width: 100%;
+    max-height: 85vh;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+/* Кнопка закрытия — зафиксирована над изображением и контентом */
+.modal-close,
+.modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    color: #0f172a;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1010;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover,
+.modal-close-btn:hover {
+    background: #f1f5f9;
+    transform: scale(1.08);
+}
+
+/* Двухколоночный сетчатый макет */
+.modal-body {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    height: 100%;
+    max-height: 85vh;
+}
+
+/* Контейнер для картинки (поддержка обоих классов) */
+.modal-image-wrapper,
+.modal-image-container {
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow: hidden;
+}
+
+.modal-image-wrapper img,
+.modal-image-container img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Блок метаданных справа */
+.modal-metadata,
+.modal-info {
+    padding: 36px 30px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.meta-title,
+.modal-info h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.3;
+}
+
+.meta-item {
+    margin-bottom: 10px;
+    font-size: 0.88rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.meta-divider {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 18px 0;
+}
+
+.meta-description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #334155;
+    margin: 0;
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 768px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+    }
+
+    .modal-image-wrapper img,
+    .modal-image-container img {
+        max-width: 100%;
+        max-height: 40vh;
+    }
+}
+
+/* ==========================================================================
+   TEXTS: GALLERY & VIEWER MODES
+   ========================================================================== */
+
+/* Сетка карточек книг */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.book-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: #cbd5e1;
+}
+
+.book-cover {
+    width: 100%;
+    height: 260px;
+    background: #0f172a;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.book-card:hover .book-cover img {
+    transform: scale(1.04);
+}
+
+.book-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.book-year {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.book-info h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+    line-height: 1.35;
+    color: var(--text-primary);
+}
+
+.book-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Кнопка "Назад к списку" */
+.viewer-top-bar {
+    margin-bottom: 16px;
+}
+
+.back-to-grid-btn {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+}
+
+.back-to-grid-btn:hover {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+}
+
+/* ==========================================================================
+   FIX: PDF SIDEBAR & CONTAINER OVERFLOW
+   ========================================================================== */
+
+.pdf-workspace {
+    display: flex;
+    gap: 20px;
+    height: 75vh;
+    min-height: 550px;
+}
+
+.pdf-container {
+    flex: 1;
+    height: 100%;
+    background: #0f172a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.pdf-sidebar {
+    width: 340px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    box-sizing: border-block-box;
+    overflow-y: auto;
+    /* Добавляет аккуратный скролл, если описание длинное */
+}
+
+/* Фиксируем блок кнопок внизу */
+.sidebar-actions {
+    margin-top: auto;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   VARIANT TYPES BADGES
+   ========================================================================== */
+
+.variant-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+/* Пунктуация */
+.variant-badge.badge-punctuation {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border-color: #bae6fd;
+}
+
+/* Орфография */
+.variant-badge.badge-orthographic,
+.variant-badge.badge-orthography {
+    background-color: #fef3c7;
+    color: #b45309;
+    border-color: #fde68a;
+}
+
+/* Фонетика */
+.variant-badge.badge-phonetic {
+    background-color: #f3e8ff;
+    color: #6b21a8;
+    border-color: #e9d5ff;
+}
+
+/* Смысловые/субстантивные правки */
+.variant-badge.badge-substantive {
+    background-color: #dcfce7;
+    color: #15803d;
+    border-color: #bbf7d0;
+}
+
+/* Базовый вариант по умолчанию */
+.variant-badge.badge-variant {
+    background-color: #f1f5f9;
+    color: #475569;
+    border-color: #cbd5e1;
+}
+
+/* About Section Layout */
+.about-container {
+    display: flex;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Sidebar Menu */
+.about-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    border-right: 1px solid #e2e8f0;
+    padding-right: 1.5rem;
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-bottom: 1.2rem;
+}
+
+.about-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.about-nav-btn {
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.about-nav-btn:hover {
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+.about-nav-btn.active {
+    background-color: #e2e8f0;
+    color: #0f172a;
+    font-weight: 600;
+    border-left: 4px solid #2563eb;
+}
+
+/* Content Area */
+.about-content {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.about-tab-content {
+    display: none;
+}
+
+.about-tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cards & Typography */
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+}
+
+.goal-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.goal-card h3 {
+    margin-top: 0;
+    color: #1e293b;
+}
+
+/* TEI Table & Notes */
+.table-responsive {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.tei-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.tei-table th,
+.tei-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+}
+
+.tei-table th {
+    background-color: #f8fafc;
+    font-weight: 600;
+}
+
+.tei-table code {
+    background: #f1f5f9;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #0f172a;
+}
+
+.methodology-note {
+    background: #f0f9ff;
+    border-left: 4px solid #0284c7;
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.92rem;
+    color: #0c4a6e;
+}
+
+.biblio-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+        padding-right: 0;
+        padding-bottom: 1rem;
+    }
+}
