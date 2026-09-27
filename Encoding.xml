@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/namespace/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Divers voyages et missions du P. Alexandre de Rhodes (1653 vs 1682): Digital Scholarly Edition</title>
+        <author ref="#person-rhodes">Alexandre de Rhodes</author>
+        <editor>Student Project Team</editor>
+        <respStmt>
+          <resp>TEI P5 XML Encoding, Collation &amp; Critical Apparatus by</resp>
+          <name>Student Project Team</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>University Scholarly Digital Edition</publisher>
+        <date>2026</date>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <listWit>
+          <witness xml:id="W1653">
+            <bibl>
+              <author ref="#person-rhodes">Alexandre de Rhodes</author>
+              <title>Divers voyages et missions du P. Alexandre de Rhodes en la Chine et autres royaumes de l'Orient, avec son retour en Europe par la Perse et l'Arménie.</title>
+              <pubPlace>Paris</pubPlace>
+              <publisher>Sébastien Cramoisy</publisher>
+              <date>1653</date>
+            </bibl>
+          </witness>
+          <witness xml:id="W1682">
+            <bibl>
+              <author ref="#person-rhodes">Alexandre de Rhodes</author>
+              <title>Divers voyages de la Chine, et autres royaumes de l'orient. Avec le retour de l'autheur en europe, par la Perse &amp; l'Armenie..</title>
+              <pubPlace>Paris</pubPlace>
+              <publisher>Cristophe Journel</publisher>
+              <date>1682</date>
+            </bibl>
+          </witness>
+        </listWit>
+        
+        <p>This digital edition is based on digital surrogates provided by online repositories. Primary source limitations and surrogate characteristics are documented according to HRIT standards.</p>
+      </sourceDesc>
+    </fileDesc>
+  
+    
+    <profileDesc>
+      <particDesc>
+        <listPerson>
+          <person xml:id="person-rhodes">
+            <persName>
+              <forename>Alexandre</forename>
+              <nameLink>de</nameLink>
+              <surname>Rhodes</surname>
+            </persName>
+            <occupation>Jesuit missionary and author.</occupation>
+          </person>
+          
+          <person xml:id="person-rubin">
+            <persName>
+              <roleName>Pere</roleName>
+              <forename>Antoine</forename>
+              <surname>Rubin</surname>
+            </persName>
+            <note>Jesuit missionary and martyr in Japan.</note>
+          </person>
+          
+          <person xml:id="person-capeche">
+            <persName>
+              <roleName>Pere</roleName>
+              <forename>Antoine</forename>
+              <surname>Capeché</surname>
+            </persName>
+            <note>Jesuit missionary and martyr.</note>
+          </person>
+          
+          <person xml:id="person-marquez">
+            <persName>
+              <roleName>Frere</roleName>
+              <forename>François</forename>
+              <surname>Marquez</surname>
+            </persName>
+            <note>Jesuit brother and martyr.</note>
+          </person>
+          
+          <person xml:id="person-matthew">
+            <persName>
+              <roleName>Saint</roleName>
+              <forename>Matthieu</forename>
+            </persName>
+            <note>Apostle and Evangelist.</note>
+          </person>
+          
+          <person xml:id="person-virgin-mary" type="sacred">
+            <persName xml:lang="fr">
+              <roleName>Saint</roleName>
+              <name>Vierge</name>
+            </persName>
+            <note>The Blessed Virgin Mary.</note>
+          </person>
+        </listPerson>
+        
+        <listOrg>
+          <org xml:id="org-augustinians">
+            <orgName>Peres Augustins déchaussez</orgName>
+          </org>
+          <org xml:id="org-dominicans">
+            <orgName>Religieux de Sainct Dominique</orgName>
+          </org>
+        </listOrg>
+      </particDesc>
+      
+      <settingDesc>
+        <listPlace>
+          <place xml:id="place-bolinao">
+            <placeName>Bolinao</placeName>
+            <desc>Port town in the Philippines</desc>
+          </place>
+          <place xml:id="place-manila">
+            <placeName>Manille</placeName>
+            <desc>Capital city of the Philippines</desc>
+          </place>
+          <place xml:id="place-philippines">
+            <placeName>Philippines</placeName>
+          </place>
+          <place xml:id="place-china">
+            <placeName>Chine</placeName>
+          </place>
+          <place xml:id="place-cochinchine">
+            <placeName>Cochinchine</placeName>
+          </place>
+          <place xml:id="place-japan">
+            <placeName>Iapon</placeName>
+          </place>
+          <place xml:id="place-macao">
+            <placeName>Macao</placeName>
+          </place>
+        </listPlace>
+      </settingDesc>
+    </profileDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+      <div type="chapter">
+        <!-- Оглавление и номер главы с учетом структурных различий -->
+        <head>
+          <title type="chapter" n="21" rend="center">Mon ſeiour dans les Philippines, et mon depart pour   la Chine.</title>
+          
+        <app type="substantive">
+          <lem wit="#W1653">
+            <pb edRef="#W1653" n="149"/>
+            <num value="21" rend="center">Chap. XXI.</num>
+          </lem>
+          <rdg wit="#W1682">
+            <pb edRef="#W1682" n="142"/>
+            <num value="20" rend="center">Chapitre XX.</num>
+          </rdg>
+        </app>
+        </head>
+
+        <p>
+          En ce port de <placeName ref="#place-bolinao">Bolinao</placeName> ie rencontray vn beau  
+          Conuent des Reuerends Peres <orgName ref="#org-augustinians">Auguſtins déchauſſez</orgName>, qui eurent la bonté de me venir prendre  
+          dans le port, &amp; me meinerent en leur maiſon, où  
+          ils me receurent auec vne extreme charité
+          <app type="punctuation">
+          <lem wit="#W1653">, </lem>
+          <rdg wit="#W1682">: </rdg>
+          </app> 
+          ie m'y 
+          arreſtay cinq jours 
+          <app type="punctuation">
+            <lem wit="#W1653"> </lem>
+            <rdg wit="#W1682">, </rdg>
+          </app> 
+          <app type="substantive">
+            <lem wit="#W1653">en attendant de me pouuoir</lem>
+            <rdg wit="#W1682">atendant que ie peuſſe</rdg>
+          </app>  
+          embarquer pour aller à la capitale du païs qui eſt  
+          <placeName ref="#place-manila">Manille</placeName>
+          <app type="punctuation">
+            <lem wit="#W1653">, </lem>
+            <rdg wit="#W1682">: </rdg>
+        </app>
+        mais la Mer ſe trouua ſi fort agitée, qu'il me 
+          <app type="orthographic">
+            <lem wit="#W1653">falluſt</lem>
+            <rdg wit="#W1682">fallut</rdg>
+          </app> 
+          prendre le chemin par terre, qui eſt  
+          long, &amp; fort dangereux.
+        </p>
+
+        <p>
+          I'allay cent bonnes lieuës, rencontrant en pluſieurs endroits des Religieux de 
+          <app type="orthographic">
+            <lem wit="#W1653">Sainct</lem>
+            <rdg wit="#W1682">ſainct</rdg>
+          </app> 
+          Auguſtin,  
+          &amp; de 
+          <app type="orthographic">
+            <lem wit="#W1653">Sainct</lem>
+            <rdg wit="#W1682">ſainct</rdg>
+          </app> 
+          <orgName ref="#org-dominicans">Dominique</orgName> qui me faiſoient mille careſſes, &amp; enfin i'arriuay heureuſement à <placeName ref="#place-manila">Manille</placeName>,
+          <pb edRef="#W1653" n="150"/>
+          le 
+          <app type="orthographic">
+            <lem wit="#W1653">quinzieſme</lem>
+            <rdg wit="#W1682">quinziéme</rdg>
+          </app> 
+          Aouſt, dedié à l'entrée triomphante de la <persName ref="#person-virgin-mary">Vierge</persName> dans le Ciel; Celuy qui 
+          <app type="orthographic">
+            <lem wit="#W1653">accouruſt</lem>
+            <rdg wit="#W1682">accourut</rdg>
+          </app>  
+          le premier, &amp; qui 
+          <app type="substantive">
+            <lem wit="#W1653">me</lem>
+            <rdg wit="#W1682">vint au deuant de moy,</rdg>
+          </app> 
+          fut le Reuerend Pere <pb edRef="#W1682" n="143"/><persName ref="#person-rubin">Antoine Rubin</persName>, qui depuis 
+          <app type="substantive">
+            <lem wit="#W1653">deux mois enuiron</lem>
+            <rdg wit="#W1682">enuiron deux mois</rdg>
+          </app>,   auoit quitté la <placeName ref="#place-cochinchine">Cochinchine</placeName>, &amp; ſe tenoit  
+          à <placeName ref="#place-manila">Manille</placeName>, pour prendre toutes les meſures du  
+          grand 
+          <app type="orthographic">
+            <lem wit="#W1653">voyage</lem>
+            <rdg wit="#W1682">voiage</rdg>
+          </app> 
+          du <placeName ref="#place-japan">Iapon</placeName>, où il pretendoit le Martyre
+          <app type="punctuation">
+            <lem wit="#W1653">,</lem>
+            <rdg wit="#W1682">:</rdg>
+          </app>
+          <app type="substantive">
+            <lem wit="#W1653">&amp; puis</lem>
+            <rdg wit="#W1682"> </rdg>
+          </app> 
+          Dieu ſçait auec quelle douceur, i'embraſſay ce 
+          <app type="orthographic">
+            <lem wit="#W1653">Sainct</lem>
+            <rdg wit="#W1682">ſainct</rdg>
+          </app> 
+          Perſonnage
+          <app type="orthographic">
+            <lem wit="#W1653">, auſſi toſt</lem>
+            <rdg wit="#W1682">Auſſi-toſt</rdg>
+          </app> 
+          apres le  
+          Reuerend Pere <persName ref="#person-capeche">Antoine Capeché</persName>, ſe vint ietter  
+          ſur mon col &amp; en meſme 
+          <app type="orthographic">
+            <lem wit="#W1653">teps</lem>
+            <rdg wit="#W1682">temps</rdg>
+          </app> 
+          noſtre 
+          <app type="orthographic">
+            <lem wit="#W1653">aymable</lem>
+            <rdg wit="#W1682">aimable</rdg>
+          </app>  
+          Frere <persName ref="#person-marquez">François Marquez</persName>, tous trois mes intimes amis:  
+          Mais helas 
+          <app type="punctuation">
+            <lem wit="#W1653"> </lem>
+            <rdg wit="#W1682">! </rdg>
+          </app>
+          tous trois glorieux Martyrs, &amp; moy  
+          encore miſerable, dans vne vie languiſſante, &amp;  
+          dans l'incertitude de mon ſalut.
+        </p>
+
+        <p>
+          Il faut 
+          <app type="orthographic">
+            <lem wit="#W1653">aduoüer</lem>
+            <rdg wit="#W1682">auoüer</rdg>
+          </app> 
+          que pendant enuiron cinq ſemaines que ie m'arreſtay à <placeName ref="#place-manila">Manille</placeName>, la preſence, l'amitié, mais ſur tout le courage admirable de ces  
+          trois genereux ſeruiteurs de Dieu, &amp; 
+          <app type="orthographic">
+            <lem wit="#W1653">pretendats</lem>
+            <rdg wit="#W1682">pretendans</rdg>
+          </app> 
+          au  
+          Martyre, me donnerent 
+          <app type="orthographic">
+            <lem wit="#W1653">d'eſtranges</lem>
+            <rdg wit="#W1682">d'étranges</rdg>
+          </app> 
+          combats pour  
+          me reſoudre d'aller au <placeName ref="#place-japan">Iapon</placeName> où le Martyre eſtoit  
+          aſſeuré. C'eſtoit bien là 
+          <app type="orthographic">
+            <lem wit="#W1653">l'obiect</lem>
+            <rdg wit="#W1682">l'obiet</rdg>
+          </app> 
+          de tous mes deſirs,  
+          encore que d'ailleurs la promeſſe que i'auois 
+          <app type="orthographic">
+            <lem wit="#W1653">faicte</lem>
+            <rdg wit="#W1682">faite</rdg>
+          </app>  
+          à mes Chreſtiens de la <placeName ref="#place-cochinchine">Cochinchine</placeName>, &amp; la necefſité où ie les auois laiſſez, me donnaſſent bien au  
+          cœur. Dans cette incertitude de mon eſprit, ie  
+          voulus que Dieu ſeul fuſt l'arbitre du different, ie  
+          m'addreſſay aux Superieurs par la bouche deſquels  
+          <app type="substantive">
+            <lem wit="#W1653">il</lem>
+            <rdg wit="#W1682">ie</rdg>
+          </app> 
+          parle
+          <app type="punctuation">
+            <lem wit="#W1653">,</lem>
+            <rdg wit="#W1682">;</rdg>
+          </app>
+          ie leur dis mon cœur, qui eſtoit fort attiré au <placeName ref="#place-japan">Iapon</placeName>, &amp; leur propoſay les raiſons qui me  
+          <pb edRef="#W1653" n="151"/>
+          tenoient 
+          <app type="substantive">
+            <lem wit="#W1653">en balance,</lem>
+            <rdg wit="#W1682">dans l'incertitude:</rdg>
+          </app> 
+          ils trouuerent à propos que  
+          l'intereſt de tant de Chreſtiens, l'emportaſt par  
+          deſſus mon inclination, &amp; me dirent que ſi Dieu  
+          me vouloit Martyr, il en trouueroit le moyen auſſi<pb edRef="#W1682" n="144"/> bien à la <placeName ref="#place-cochinchine">Cochinchine</placeName> comme au <placeName ref="#place-japan">Iapon</placeName>
+          <app type="substantive">
+            <lem wit="#W1653">, l'acquieſcay</lem>
+            <rdg wit="#W1682">. I'acquieſçay</rdg>
+          </app>
+          à cette reſolution 
+          <app type="punctuation">
+            <lem wit="#W1653">, </lem>
+            <rdg wit="#W1682">; </rdg>
+          </app>
+          &amp; ne penſay plus qu'à  
+          retrouuer la routte de mon Egliſe de la <placeName ref="#place-cochinchine">Cochinchine</placeName>. Mais il falloit auparauant tirer vers la <placeName ref="#place-china">Chine</placeName>.
+        </p>
+
+        <p>
+          Le Reuerend Pere <persName ref="#person-rubin">Antoine Rubin</persName> apres auoir  
+          <app type="orthographic">
+            <lem wit="#W1653">faict</lem>
+            <rdg wit="#W1682">fait</rdg>
+          </app> 
+          à <placeName ref="#place-manila">Manille</placeName> tous les preparatifs neceſſaires à  
+          ſon grand voyage, 
+          <app type="orthographic">
+            <lem wit="#W1653">vouluſt</lem>
+            <rdg wit="#W1682">voulut</rdg>
+          </app> 
+          aller encore vne fois à  
+          <placeName ref="#place-macao">Macao</placeName> donner les derniers ordres en ſa Prouince  
+          où il ne deuoit iamais plus venir. I'eus le bon-heur  
+          de m'embarquer auec ce 
+          <app type="orthographic">
+            <lem wit="#W1653">Sainct</lem>
+            <rdg wit="#W1682">ſainct</rdg>
+          </app> 
+          Homme le 
+          <app type="orthographic">
+            <lem wit="#W1653">vingt-vnieſme</lem>
+            <rdg wit="#W1682">vint-vniéme</rdg>
+          </app> 
+          Septembre iour de 
+          <app type="orthographic">
+            <lem wit="#W1653">Sainct</lem>
+            <rdg wit="#W1682">Saint</rdg>
+          </app> 
+          <persName ref="#person-matthew">Matthieu</persName>. Ie  
+          ne ſçay ſi les 
+          <app type="orthographic">
+            <lem wit="#W1653">Demons</lem>
+            <rdg wit="#W1682">demons</rdg>
+          </app> 
+          apprehendans la honte  
+          que leur deuoient donner les triomphes de ce  
+          grand Martyr, ne voulurent point enſeuelir dans  
+          les eaux cette vertu qui les alloit perdre, mais ie  
+          <app type="orthographic">
+            <lem wit="#W1653">ſcay</lem>
+            <rdg wit="#W1682">ſçay</rdg>
+          </app> 
+          bien que nous fûmes attaquez d'vne tempeſte ſi horrible que nous ne penſions pas d'en pouuoir iamais 
+          <app type="orthographic">
+            <lem wit="#W1653">eſchapper</lem>
+            <rdg wit="#W1682">échaper</rdg>
+          </app>.
+        </p>
+
+        <p>
+          Pour moy ie croyois d'eſtre à la fin de tous mes  
+          voyages, noſtre nauire n'auoit plus de voiles, nous  
+          auions abbaſſé le maſt, nous allions ſur les vagues, ſans autre deſſein que de bien diſpoſer  
+          nos ames à paroiſtre deuant Dieu. Ie remarquay  
+          ſoigneuſement pendant tout ce temps-là le Pere  
+          <persName ref="#person-rubin">Rubin</persName>, il auoit les yeux collez au 
+          <app type="orthographic">
+            <lem wit="#W1653">Ciel</lem>
+            <rdg wit="#W1682">ciel</rdg>
+          </app>, le viſage  
+          <pb edRef="#W1653" n="152"/>
+
+          gay, la mine aſſeurée, il ſe tourna vers moy, &amp; me  
+          <app type="orthographic">
+            <lem wit="#W1653">dit</lem>
+            <rdg wit="#W1682">dît</rdg>
+          </app> 
+          d'vne parole ferme
+          <app type="punctuation">
+            <lem wit="#W1653">,</lem>
+            <rdg wit="#W1682">:</rdg>
+            <note>The beginning of direct speech</note>
+          </app> 
+          Pere <persName ref="#person-rhodes">Alexandre</persName>
+          <app type="punctuation">
+            <lem wit="#W1653"/>
+            <rdg wit="#W1682">!</rdg>
+          </app> 
+          ne craignez rien nous ne ſerons point mangez par les  
+          poiſſons
+          <app type="punctuation">
+            <lem wit="#W1653">;</lem>
+            <rdg wit="#W1682">:</rdg>
+            <note>The end of direct speech</note>
+          </app> 
+          il me dit cela d'vn accent, qui me 
+          <app type="orthographic">
+            <lem wit="#W1653">ſiſt</lem>
+            <rdg wit="#W1682">fit</rdg>
+          </app>  
+          croire, que Dieu luy auoit dit des nouuelles de la  
+          grace qu'il auoit deſſein de nous faire.
+        </p>
+
+        <p>
+        <pb edRef="#W1682" n="145"/>
+          Ie pris pour lors dans mon reliquaire vn cheueu de la 
+          <app type="orthographic">
+            <lem wit="#W1653">Saincte</lem>
+            <rdg wit="#W1682">ſainte</rdg>
+          </app> 
+          <persName ref="#person-virgin-mary">Vierge</persName>, que i'auois depuis fort  
+          <app type="orthographic">
+            <lem wit="#W1653">long temps</lem>
+            <rdg wit="#W1682">longtemps</rdg>
+          </app>, &amp; qui m'auoit ſouuent bien ſeruy en  
+          <app type="substantive">
+            <lem wit="#W1653">des</lem>
+            <rdg wit="#W1682">de</rdg>
+          </app> 
+          pareilles occaſions, ie le mis dans vne petite  
+          <app type="orthographic">
+            <lem wit="#W1653">boëtte</lem>
+            <rdg wit="#W1682">boite</rdg>
+          </app>, puis 
+          <app type="orthographic">
+            <lem wit="#W1653">lattachant</lem>
+            <rdg wit="#W1682">l'attachant</rdg>
+          </app> 
+          auec vne corde, ie le mis  
+          dans la Mer qui eſtoit horrible à voir. Choſe admirable dans ce meſme temps, les flots 
+          <app type="orthographic">
+            <lem wit="#W1653">ſ'abbatirent</lem>
+            <rdg wit="#W1682">ſ'abatirent</rdg>
+          </app>, les vents 
+          <app type="orthographic">
+            <lem wit="#W1653">ſ'appaiſerent</lem>
+            <rdg wit="#W1682">ſ'apaiſerent</rdg>
+          </app>, &amp; toute cette tempeſte ceſſa auec vn tel 
+          <app type="orthographic">
+            <lem wit="#W1653">eſtonnement</lem>
+            <rdg wit="#W1682">étonnement</rdg>
+          </app> 
+          de tous ceux  
+          qui eſtoient au vaiſſeau, qu'il n'y en 
+          <app type="orthographic">
+            <lem wit="#W1653">eult</lem>
+            <rdg wit="#W1682">eut</rdg>
+          </app> 
+          pas vn
+          <app type="punctuation">
+            <lem wit="#W1653">, </lem>
+            <rdg wit="#W1682"> </rdg>
+          </app>   
+          qui ne 
+          <app type="orthographic">
+            <lem wit="#W1653">creuſt</lem>
+            <rdg wit="#W1682">cruſt</rdg>
+          </app> 
+          que c'eſtoit vn vray miracle.
+        </p>
+
+        <p>
+          Nous ramaſſâmes auſſi toſt tout ce que nous  
+          <app type="orthographic">
+            <lem wit="#W1653">peûmes</lem>
+            <rdg wit="#W1682">pûmes</rdg>
+          </app> 
+          de pieces de toiles, &amp; de cordages, nous  
+          <app type="orthographic">
+            <lem wit="#W1653">repetaſſâmes</lem>
+            <rdg wit="#W1682">rapetaſſâmes</rdg>
+          </app> 
+          des voiles, &amp; apres auoir eſté ſi mal  
+          <app type="orthographic">
+            <lem wit="#W1653">traittez</lem>
+            <rdg wit="#W1682">traitez</rdg>
+          </app> 
+          de la Mer quinze jours durant, nous arriuâmes 
+          <app type="substantive">
+            <lem wit="#W1653">en</lem>
+            <rdg wit="#W1682">à</rdg>
+          </app> 
+          terre, où nos Peres de <placeName ref="#place-macao">Macao</placeName> nous firent  
+          le meilleur traittement qu'ils peurent.
+        </p>
+      </div>
+    </body>
+  </text>
+</TEI>
