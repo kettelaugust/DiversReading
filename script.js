@@ -369,7 +369,7 @@ function openLightbox(index) {
     document.getElementById('modal-title').innerText = item.title;
     document.getElementById('modal-author').innerText = item.author;
     document.getElementById('modal-year').innerText = item.year;
-    document.getElementById('modal-source').innerText = item.source || 'N/A';
+    document.getElementById('modal-source').innerHTML = item.source || 'N/A';
     document.getElementById('modal-desc').innerText = item.description;
 
     // Вывод ресурса/источника
