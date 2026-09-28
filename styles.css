@@ -244,25 +244,6 @@ body {
     line-height: 1.8;
 }
 
-/* Кнопка Download XML */
-.download-xml-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background-color: var(--btn-dark);
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.download-xml-btn:hover {
-    background-color: #18181b;
-    transform: translateY(-1px);
-}
 
 .variant-highlight {
     background-color: #fef3c7;
@@ -278,13 +259,48 @@ body {
     font-weight: 600;
 }
 
+/*шапка аппарата для variants*/
 .apparatus-panel {
     margin-top: 25px;
     background: white;
-    padding: 22px 30px;
+    padding: 12px 20px;
     border: 1px solid var(--border-color);
     border-left: 5px solid var(--text-primary);
     border-radius: 10px;
+}
+
+/* Шапка с разделением по бокам */
+.apparatus-header {
+    display: flex;
+    justify-content: space-between;
+    /* Variants слева, кнопка справа */
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.app-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+/* Стилизация кнопки Download XML */
+.download-xml-btn {
+    background-color: var(--btn-dark);
+    /* темная переменная */
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.download-xml-btn:hover {
+    background-color: #18181b;
 }
 
 /* Раздел Карта */
