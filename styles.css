@@ -259,44 +259,60 @@ body {
     font-weight: 600;
 }
 
-/*шапка аппарата для variants*/
+/* Главный контейнер*/
 .apparatus-panel {
-    margin-top: 25px;
+    margin-top: 15px;
     background: white;
-    padding: 12px 20px;
+    padding: 10px 20px;
     border: 1px solid var(--border-color);
     border-left: 5px solid var(--text-primary);
     border-radius: 10px;
 }
 
-/* Шапка с разделением по бокам */
+/* Шапка во всю ширину */
 .apparatus-header {
     display: flex;
     justify-content: space-between;
-    /* Variants слева, кнопка справа */
     align-items: center;
-    margin-bottom: 12px;
+    gap: 15px;
+}
+
+/* Контейнер для "Variants:" + сам текст вариантов */
+.apparatus-inline-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Расстояние между надписью Variants: и вариантами */
+    flex-wrap: wrap;
 }
 
 .app-title {
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-primary);
+    white-space: nowrap;
+    /* Не даёт слову Variants переноситься */
 }
 
-/* Стилизация кнопки Download XML */
+/* Сбрасываем лишние отступы у блока с вариантами */
+#app-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+/* Компактная кнопка */
 .download-xml-btn {
     background-color: var(--btn-dark);
-    /* темная переменная */
     color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    display: inline-flex;
-    align-items: center;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
 }
 
 .download-xml-btn:hover {
