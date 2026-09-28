@@ -4,19 +4,18 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Divers voyages et missions du P. Alexandre de Rhodes (1653 vs 1682): Digital Scholarly Edition</title>
-        <author ref="#person-rhodes">Alexandre de Rhodes</author>
-        <editor>Student Project Team</editor>
+        <title>Divers readings of Divers Voyages (1653 vs 1682): Digital Scholarly Edition</title>
+        <author>Alexandre de Rhodes</author>
         <respStmt>
-          <resp>TEI P5 XML Encoding, Collation &amp; Critical Apparatus by</resp>
-          <name>Student Project Team</name>
+          <resp>compiled by</resp>
+          <name>Ekaterina Krasnova</name>
         </respStmt>
       </titleStmt>
       <publicationStmt>
-        <publisher>University Scholarly Digital Edition</publisher>
-        <date>2026</date>
+        <publisher>University of Bologna</publisher>
+        <date>September 2026</date>
         <availability>
-          <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence>
+        <p>For educational and academic evaluation purposes only.</p>
         </availability>
       </publicationStmt>
       <sourceDesc>
@@ -33,7 +32,7 @@
           <witness xml:id="W1682">
             <bibl>
               <author ref="#person-rhodes">Alexandre de Rhodes</author>
-              <title>Divers voyages de la Chine, et autres royaumes de l'orient. Avec le retour de l'autheur en europe, par la Perse &amp; l'Armenie..</title>
+              <title>Divers voyages de la Chine, et autres royaumes de l'orient. Avec le retour de l'autheur en europe, par la Perse &amp; l'Armenie.</title>
               <pubPlace>Paris</pubPlace>
               <publisher>Cristophe Journel</publisher>
               <date>1682</date>
@@ -90,7 +89,6 @@
               <roleName>Saint</roleName>
               <forename>Matthieu</forename>
             </persName>
-            <note>Apostle and Evangelist.</note>
           </person>
           
           <person xml:id="person-virgin-mary" type="sacred">
@@ -98,7 +96,6 @@
               <roleName>Saint</roleName>
               <name>Vierge</name>
             </persName>
-            <note>The Blessed Virgin Mary.</note>
           </person>
         </listPerson>
         
