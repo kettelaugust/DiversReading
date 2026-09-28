@@ -328,7 +328,7 @@ const galleryData = [
         title: "The Introduction of Roman Writing Into Vietnam",
         author: "Nguyen Dinh Dang",
         year: "March 2001",
-        source: "Author's Official Website: http://rarfaxp.riken.go.jp/~dang/rhodes_motive.html",
+        source: `Author's <a href="http://rarfaxp.riken.go.jp/~dang/rhodes_motive.html" target="_blank" rel="noopener noreferrer">official website</a>`,
         description: "This artwork was created on the occasion of the 350th anniversary of the first Vietnamese dictionary. An artistic representation symbolizing the historical transition and cultural synthesis of Latin writing in Vietnam."
     },
     {
