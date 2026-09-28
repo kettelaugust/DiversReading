@@ -245,7 +245,7 @@ const pdfBooksData = {
         description: 'First major French edition detailing Alexandre de Rhodes\' 35-year travel through Asia, mission work in Tonkin and Cochinchina, and notes on regional languages and culture.'
     },
     '1655_relation': {
-        pdfPath: 'data/pdfs/Realtion.pdf',
+        pdfPath: 'data/pdfs/Relation.pdf',
         title: 'Relation de ce qui s\'est passé en l\'année 1649. dans les royaumes où les Peres de la Compagnie de Jésus de la province du Japon, publient le Saint Evangile...',
         author: 'Rhodes, Alexandre de (1591–1660)',
         year: '1655',
