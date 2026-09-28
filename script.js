@@ -375,7 +375,7 @@ function openLightbox(index) {
     // Вывод ресурса/источника
     const sourceElem = document.getElementById('modal-source');
     if (sourceElem) {
-        sourceElem.innerText = item.source || 'N/A';
+        sourceElem.innerHTML = item.source || 'N/A';
     }
 
     const modal = document.getElementById('gallery-modal');
